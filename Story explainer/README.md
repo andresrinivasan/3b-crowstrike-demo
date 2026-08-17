@@ -4,7 +4,7 @@ The skills capture the CrowdStrike Falcon knowledge that was embedded in that st
 
 - `crowdstrike-hosts-lookup` — resolve hostnames to device IDs (AIDs) and fetch host details, including the FQDN trap that silently breaks most first attempts.
 - `crowdstrike-host-tagging` — apply and remove `FalconGroupingTags/`, with batching and partial-success handling.
-- `crowdstrike-asset-discovery` — find unmanaged assets (machines with no Falcon sensor) and attribute coverage gaps to an owning team.
+- `crowdstrike-asset-discovery` — find unmanaged assets (machines with no Falcon sensor), attribute coverage gaps to an owning team, and fall back to Falcon Exposure Management or an RTR ARP sweep when Discover isn't licensed.
 
 ## Trigger
 
