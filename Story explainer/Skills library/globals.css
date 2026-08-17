@@ -1,0 +1,56 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@source "./*.tsx";
+
+@import url("https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap");
+
+@theme {
+  --font-display: "Bitter", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-ink: #100c0b;
+  --color-ink-soft: #191312;
+  --color-panel: #211918;
+  --color-rule: #3a2b28;
+  --color-paper: #f2e9e2;
+  --color-muted: #a3928c;
+  --color-ember: #e8442e;
+  --color-brass: #d9a04a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-mono);
+  -webkit-font-smoothing: antialiased;
+}
+
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.rule-grid {
+  background-image: linear-gradient(var(--color-rule) 1px, transparent 1px);
+  background-size: 100% 2.25rem;
+}
+
+.doc::-webkit-scrollbar {
+  width: 10px;
+}
+.doc::-webkit-scrollbar-track {
+  background: var(--color-ink-soft);
+}
+.doc::-webkit-scrollbar-thumb {
+  background: var(--color-rule);
+  border-radius: 999px;
+}

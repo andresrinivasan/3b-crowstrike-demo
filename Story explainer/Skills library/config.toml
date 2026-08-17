@@ -1,0 +1,5 @@
+color = "red"
+output = true
+route = "/crowdstrike-skills"
+route_type = "webpage"
+title = "CrowdStrike skills library"
