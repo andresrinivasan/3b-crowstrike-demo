@@ -1,0 +1,5 @@
+color = "purple"
+route = "/unregistered-hosts"
+route_type = "webpage"
+title = "Unregistered host detection"
+output = true

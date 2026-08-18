@@ -1,0 +1,4 @@
+color = "sky"
+cron = "0 3 * * *"
+connectors = [{ name = "se-shared-crowdstrike-tenant", type = "crowdStrike" }]
+timeout = 300

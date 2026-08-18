@@ -1,0 +1,5 @@
+color = "teal"
+route = "/unregistered-hosts-data"
+route_type = "api"
+title = "Unregistered host report data"
+output = true
