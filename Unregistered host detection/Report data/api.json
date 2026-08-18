@@ -1,0 +1,48 @@
+{
+  "get": {
+    "summary": "Latest unregistered-host sweep report",
+    "responses": {
+      "200": {
+        "description": "The most recent nightly sweep",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "required": ["generated_at", "window", "source", "unmanaged", "unsupported"],
+              "properties": {
+                "generated_at": { "type": "string", "format": "date-time" },
+                "window": { "type": "string" },
+                "source": { "type": "string" },
+                "managed_hosts_compared": { "type": "integer" },
+                "unmanaged": { "type": "array", "items": { "type": "object", "properties": {
+                  "id": { "type": "string" },
+                  "entity_type": { "type": "string" },
+                  "hostname": { "type": "string" },
+                  "current_local_ip": { "type": "string" },
+                  "mac_address": { "type": "string" },
+                  "os_version": { "type": "string" },
+                  "platform_name": { "type": "string" },
+                  "confidence": { "type": "integer" },
+                  "first_seen": { "type": "string" },
+                  "last_seen": { "type": "string" },
+                  "discovered_by": { "type": "string" },
+                  "discoverer_tags": { "type": "array", "items": { "type": "string" } },
+                  "matches_managed_host": { "type": "boolean" }
+                } } },
+                "unsupported": { "type": "array", "items": { "type": "object" } }
+              }
+            }
+          }
+        }
+      },
+      "404": {
+        "description": "No sweep has run yet",
+        "content": {
+          "application/json": {
+            "schema": { "type": "object", "properties": { "error": { "type": "string" } } }
+          }
+        }
+      }
+    }
+  }
+}
