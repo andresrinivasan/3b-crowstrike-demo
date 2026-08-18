@@ -1,0 +1,5 @@
+color = "purple"
+route = "/unmanaged-hosts"
+route_type = "webpage"
+title = "Unmanaged host discovery"
+output = true

@@ -1,0 +1,32 @@
+{
+  "get": {
+    "summary": "Latest nightly unmanaged-asset report",
+    "responses": {
+      "200": {
+        "description": "The most recent sweep",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "generated_at": { "type": ["string", "null"], "format": "date-time" },
+                "window": { "type": "string" },
+                "counts": {
+                  "type": "object",
+                  "properties": {
+                    "unmanaged": { "type": "integer" },
+                    "unsupported": { "type": "integer" },
+                    "new_today": { "type": "integer" }
+                  }
+                },
+                "by_department": { "type": "object", "additionalProperties": { "type": "integer" } },
+                "unmanaged": { "type": "array", "items": { "type": "object" } },
+                "unsupported": { "type": "array", "items": { "type": "object" } }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

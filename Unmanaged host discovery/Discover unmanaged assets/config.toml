@@ -1,0 +1,3 @@
+color = "sky"
+cron = "0 3 * * *"
+timeout = 300

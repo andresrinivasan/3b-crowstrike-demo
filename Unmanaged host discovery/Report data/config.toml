@@ -1,0 +1,5 @@
+color = "teal"
+route = "/unmanaged-hosts-data"
+route_type = "api"
+title = "Unmanaged host data"
+output = true
