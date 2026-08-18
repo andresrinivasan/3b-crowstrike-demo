@@ -1,0 +1,29 @@
+{
+  "post": {
+    "summary": "MCP (JSON-RPC 2.0) endpoint for CrowdStrike Falcon host lookups",
+    "requestBody": {
+      "required": true,
+      "content": {
+        "application/json": {
+          "schema": {
+            "type": "object",
+            "required": ["jsonrpc", "method"],
+            "properties": {
+              "jsonrpc": { "type": "string", "const": "2.0" },
+              "id": { "type": ["string", "number", "null"] },
+              "method": { "type": "string", "description": "initialize, tools/list, tools/call, or ping" },
+              "params": { "type": "object" }
+            }
+          }
+        }
+      }
+    },
+    "responses": {
+      "200": {
+        "description": "JSON-RPC result",
+        "content": { "application/json": { "schema": { "type": "object" } } }
+      },
+      "202": { "description": "Notification accepted, no body" }
+    }
+  }
+}
