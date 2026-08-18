@@ -11,6 +11,11 @@ restricted to members of this space. The page fetches
 [`/unregistered-hosts-data`](<Report data/script.ts>) for the stored JSON, so it loads instantly and
 never blocks on the CrowdStrike API.
 
+**Seeing it without a sweep.** `/unregistered-hosts?sample=1` renders the page against
+[Report data/sample.json](<Report data/sample.json>), a fabricated report exercising every case the
+page draws. It's for demos and UI work only — opt-in, never a fallback, so a real page with no
+sweep behind it still says so rather than showing invented hosts.
+
 Read-only throughout: nothing is written back to CrowdStrike and no notifications are sent. The
 only side effect is the report file in the `falcon_coverage` volume.
 

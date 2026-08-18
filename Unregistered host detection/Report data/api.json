@@ -1,6 +1,15 @@
 {
   "get": {
     "summary": "Latest unregistered-host sweep report",
+    "parameters": [
+      {
+        "name": "sample",
+        "in": "query",
+        "required": false,
+        "description": "Set to 1 to serve the step's bundled sample.json fixture instead of the stored sweep, for demos and UI work. Opt-in only — it is never used as a fallback when no sweep has run.",
+        "schema": { "type": "string", "enum": ["1"] }
+      }
+    ],
     "responses": {
       "200": {
         "description": "The most recent nightly sweep",
@@ -36,7 +45,7 @@
         }
       },
       "404": {
-        "description": "No sweep has run yet",
+        "description": "No sweep has run yet, or sample=1 was requested and sample.json is absent",
         "content": {
           "application/json": {
             "schema": { "type": "object", "properties": { "error": { "type": "string" } } }
