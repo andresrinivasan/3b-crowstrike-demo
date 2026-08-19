@@ -1,0 +1,8 @@
+color = "red"
+output = true
+route = "/falcon-coverage/mcp"
+route_auth = "space"
+route_type = "api"
+title = "Falcon coverage MCP server"
+connectors = [{ name = "se-shared-crowdstrike-tenant", type = "crowdStrike" }]
+timeout = 120
